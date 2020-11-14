@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-
-import DATABASES as DATABASES
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +29,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 # Application definition
 
 INSTALLED_APPS = [
@@ -61,7 +58,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 TEMPLATES = [
@@ -133,5 +129,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 LOGIN_REDIRECT_URL = '/'
